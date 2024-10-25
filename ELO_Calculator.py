@@ -28,4 +28,4 @@ def update_elo(elo,elo_change):
     return elo + elo_change
 
 
-# TODO: based on rounds.json update players ELO
+# TODO: based on round_template.json update players ELO

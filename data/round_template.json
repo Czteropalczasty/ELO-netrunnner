@@ -1,0 +1,102 @@
+{
+  "meeting number": 1,
+  "players" : [],
+  "rounds" : [
+    {
+    "round number": 1,
+    "games": [{
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      }
+    ]
+    },
+    {
+      "round number": 1,
+    "games": [{
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      }
+    ]
+    },
+    {
+      "round number": 1,
+    "games": [{
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      }
+    ]
+    },
+    {
+      "round number": 1,
+    "games": [{
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      },
+      {
+        "playerA": "a",
+        "playerB": "b",
+        "outcome" : 1
+      }
+    ]
+    }
+  ]
+}
