@@ -1,10 +1,7 @@
 {
   "meeting number": 1,
   "players": ["Gruntownie", "GivenToFly", "Staniach21", "Orris", "Baltar", "Olus2000"],
-  "rounds" : [
-    {
-    "round number": 1,
-    "games": [{
+  "round 1":[{
         "playerA": "GivenToFly",
         "playerB": "Orris",
         "outcome" : 1
@@ -19,79 +16,9 @@
         "playerB": "Olus2000",
         "outcome" : 0
       }
-    ]
-    },
-    {
-      "round number": 2,
-    "games": [{
-        "playerA": "GivenToFly",
-        "playerB": "Staniach21",
-        "outcome" : -1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      }
-    ]
-    },
-    {
-      "round number": 1,
-    "games": [{
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      }
-    ]
-    },
-    {
-      "round number": 1,
-    "games": [{
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      },
-      {
-        "playerA": "a",
-        "playerB": "b",
-        "outcome" : 1
-      }
-    ]
-    }
-  ]
+    ],
+  "round 2": [],
+  "round 3": [],
+  "round 4": []
+
 }

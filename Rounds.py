@@ -1,9 +1,14 @@
+#from ctypes import oledll
+from itertools import count
+
+#from pygments.lexers.csound import newline
+
 from ELO_Calculator import *
 from player import Player
 
 PlAYERS_PLAYING = []
 CURRENT_ROUND = 0
-
+k_factor = 32
 
 def round_set_up(players_playing_in_round):
     global PlAYERS_PLAYING, CURRENT_ROUND
@@ -22,7 +27,7 @@ def update_elo():
         for game in player_games:
             earned_outcome += game[1]
             estimated_outcome += get_estimated_outcome(player.rank, game[0].rank)
-        player.temp_rank += get_elo_change(estimated_outcome, earned_outcome)
+        player.temp_rank += get_elo_change(estimated_outcome, earned_outcome,k_factor=k_factor)
 
     # If player did not play simply update his rank:
     for player in Player.ALL_PLAYERS:
@@ -39,15 +44,35 @@ def round_summary():
         player.update_rank()
         player.print_player(newLine=False)
         print(f" ({diff})")
+        player.reset_games()
     print("\n")
 
 
 def final_summary():
+    print("="*40)
+    print(f"total round : {CURRENT_ROUND} with games : {sum(len(player.all_games) for player in Player.ALL_PLAYERS)/2}\n")
+    print("-"*20)
     print("Elo after all rounds")
     for player in Player.ALL_PLAYERS:
         player.print_player(newLine=False)
-        diff = round(player.rank - 1500)
-        print(f" ({diff})")
+
+        print(f"[{len(player.all_games)}]")
+    print("-"*20)
+    print("Win ratio after all rounds ")
+    sorted_players = sorted(
+        Player.ALL_PLAYERS,
+        key=lambda player: sum(1 for game in player.all_games if game[1] == 1) / len(player.all_games),
+        reverse=True
+    )
+    for player in sorted_players:
+        games = len(player.all_games)
+        wins = 0
+        for game in player.all_games:
+            if game[1] == 1:
+                wins += 1
+        print(f"{player.name} winrate {(wins / games) * 100:.2f}% | games({len(player.all_games)})")
+    print("="*40)
+
 
 
 def CALCUALTE_GAMES():
@@ -60,6 +85,7 @@ def CALCUALTE_GAMES():
     Orris = Player("Orris")
     Baltar = Player("Baltar")
     Olus2000 = Player("Olus2000")
+    Henader = Player("Henader")
 
     # creating bye player
     BYE = Player("BYE")
@@ -95,8 +121,8 @@ def CALCUALTE_GAMES():
     ## update elo.
     update_elo()
     round_summary()
-    # ---------------------------------------------------------------------------------------
 
+    # ---------------------------------------------------------------------------------------
     # ROUND 3 DOES NOT COUNT FOR FINAL SCORES !!!!!!!!!!1
 
     # ROUND 3 SET UP
@@ -112,9 +138,29 @@ def CALCUALTE_GAMES():
     update_elo()
     round_summary()
 
+    # ---------------------------------------------------------------------------------------
+    # ROUND 4 DOES NOT COUNT FOR FINAL SCORES !!!!!!!!!!1
+
+    # ROUND 4 SET UP
+    round_set_up([GivenToFly, Gruntownie, Olus2000,Henader])
+
+    ## GAMES
+
+    GivenToFly.round_outcome = [(Olus2000, 1), (Gruntownie, 1), (Olus2000, 0), (Gruntownie, 0),(Olus2000, 0),(Olus2000, 0),(Gruntownie, 1),(Henader, 1)]
+    Gruntownie.round_outcome = [(Olus2000, 0), (Olus2000, 1), (GivenToFly, 0), (GivenToFly, 1),(Henader, 1),(Henader, 1),(GivenToFly, 0)]
+    Olus2000.round_outcome = [(Gruntownie, 1), (GivenToFly, 0), (Gruntownie, 0), (GivenToFly, 1),(GivenToFly, 1),(GivenToFly, 1),(Henader, 0)]
+    Henader.round_outcome = [(Gruntownie,0),(Gruntownie,0),(Olus2000,1),(GivenToFly,0)]
+
+    ## update elo.
+    update_elo()
+    round_summary()
+
+
+
     # ==============================================================================================================
     # FINAL PLAYER PRINT
     final_summary()
+    print()
 
     return Player.ALL_PLAYERS
 

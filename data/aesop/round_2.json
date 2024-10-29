@@ -1,0 +1,193 @@
+{
+  "event": {
+    "name": "Liga Android:Netrunner Warszawa - Spotkanie 2",
+    "date": "2024-10-08",
+    "location": "Warsaw, Poland",
+    "preliminaryRounds": 4,
+    "players": 4,
+    "eliminationPhase": "none"
+  },
+  "players": [
+    {
+      "rank": 1,
+      "player": "olus2000",
+      "corpIdentity": "Ampere: Cybernetics For Anyone",
+      "runnerIdentity": "Nova Initiumia: Catalyst & Impetus",
+      "matchPoints": 9,
+      "strengthOfSchedule": 1.375,
+      "extendedStrengthOfSchedule": 1.5,
+      "sideBalance": 0
+    },
+    {
+      "rank": 2,
+      "player": "giventofly",
+      "corpIdentity": "Near-Earth Hub: Broadcast Center",
+      "runnerIdentity": "Nyusha \"Sable\" Sintashta: Symphonic Prodigy",
+      "matchPoints": 9,
+      "strengthOfSchedule": 1.25,
+      "extendedStrengthOfSchedule": 1.562,
+      "sideBalance": 0
+    },
+    {
+      "rank": 3,
+      "player": "Staniach21",
+      "corpIdentity": "Haas-Bioroid: Precision Design",
+      "runnerIdentity": "Rielle \"Kit\" Peddler: Transhuman",
+      "matchPoints": 6,
+      "strengthOfSchedule": 1.75,
+      "extendedStrengthOfSchedule": 1.312,
+      "sideBalance": 0
+    },
+
+    {
+      "rank": 5,
+      "player": "Gruntownie",
+      "corpIdentity": "Pravdivost Consulting: Political Solutions",
+      "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+      "matchPoints": 4,
+      "strengthOfSchedule": 1.375,
+      "extendedStrengthOfSchedule": 1.5,
+      "sideBalance": 0
+    },
+    {
+      "rank": 6,
+      "player": "Orris",
+      "corpIdentity": "Nuvem SA: Law of the Land",
+      "runnerIdentity": "Esa Afontov: Eco-Insurrectionist",
+      "matchPoints": 1,
+      "strengthOfSchedule": 1.75,
+      "extendedStrengthOfSchedule": 1.312,
+      "sideBalance": 0
+    }
+  ],
+  "rounds": [
+    [
+      {
+        "tableNumber": 1,
+        "corpPlayer": "giventofly",
+        "runnerPlayer": "Orris",
+        "corpIdentity": "Near-Earth Hub: Broadcast Center",
+        "runnerIdentity": "Esa Afontov: Eco-Insurrectionist",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 2,
+        "corpPlayer": "Gruntownie",
+        "runnerPlayer": "Staniach21",
+        "corpIdentity": "Pravdivost Consulting: Political Solutions",
+        "runnerIdentity": "Rielle \"Kit\" Peddler: Transhuman",
+        "corpScore": 0,
+        "runnerScore": 3,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 3,
+        "corpPlayer": "olus2000",
+        "runnerPlayer": "Baltar",
+        "corpIdentity": "Ampere: Cybernetics For Anyone",
+        "runnerIdentity": "Hoshiko Shiro: Untold Protagonist",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      }
+    ],
+    [
+      {
+        "tableNumber": 2,
+        "corpPlayer": "Orris",
+        "runnerPlayer": "olus2000",
+        "corpIdentity": "Nuvem SA: Law of the Land",
+        "runnerIdentity": "Nova Initiumia: Catalyst & Impetus",
+        "corpScore": 0,
+        "runnerScore": 3,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 1,
+        "corpPlayer": "Staniach21",
+        "runnerPlayer": "giventofly",
+        "corpIdentity": "Haas-Bioroid: Precision Design",
+        "runnerIdentity": "Nyusha \"Sable\" Sintashta: Symphonic Prodigy",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 3,
+        "corpPlayer": "Baltar",
+        "runnerPlayer": "Gruntownie",
+        "corpIdentity": "Jinteki: Personal Evolution",
+        "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+        "corpScore": 0,
+        "runnerScore": 3,
+        "intentionalDraw": false
+      }
+    ],
+    [
+      {
+        "tableNumber": 2,
+        "corpPlayer": "Gruntownie",
+        "runnerPlayer": "giventofly",
+        "corpIdentity": "Pravdivost Consulting: Political Solutions",
+        "runnerIdentity": "Nyusha \"Sable\" Sintashta: Symphonic Prodigy",
+        "corpScore": 0,
+        "runnerScore": 3,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 1,
+        "corpPlayer": "olus2000",
+        "runnerPlayer": "Staniach21",
+        "corpIdentity": "Ampere: Cybernetics For Anyone",
+        "runnerIdentity": "Rielle \"Kit\" Peddler: Transhuman",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 3,
+        "corpPlayer": "Baltar",
+        "runnerPlayer": "Orris",
+        "corpIdentity": "Jinteki: Personal Evolution",
+        "runnerIdentity": "Esa Afontov: Eco-Insurrectionist",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      }
+    ],
+    [
+      {
+        "tableNumber": 1,
+        "corpPlayer": "giventofly",
+        "runnerPlayer": "olus2000",
+        "corpIdentity": "Near-Earth Hub: Broadcast Center",
+        "runnerIdentity": "Nova Initiumia: Catalyst & Impetus",
+        "corpScore": 3,
+        "runnerScore": 0,
+        "intentionalDraw": false
+      },
+      {
+        "tableNumber": 3,
+        "corpPlayer": "Orris",
+        "runnerPlayer": "Gruntownie",
+        "corpIdentity": "Nuvem SA: Law of the Land",
+        "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+        "corpScore": 1,
+        "runnerScore": 1,
+        "intentionalDraw": true
+      },
+      {
+        "tableNumber": 2,
+        "corpPlayer": "Staniach21",
+        "runnerPlayer": "Baltar",
+        "corpIdentity": "Haas-Bioroid: Precision Design",
+        "runnerIdentity": "Hoshiko Shiro: Untold Protagonist",
+        "corpScore": 0,
+        "runnerScore": 3,
+        "intentionalDraw": false
+      }
+    ]
+  ]
+}

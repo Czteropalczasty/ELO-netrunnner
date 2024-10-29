@@ -7,8 +7,8 @@ from Rounds import CALCUALTE_GAMES
 
 ALL_PLAYERS = CALCUALTE_GAMES()
 
-MAX_RANK =  max(ALL_PLAYERS, key=lambda player: player.rank).rank * 1.01 # i want to top be slighly under
-MIN_RANK = min (ALL_PLAYERS, key=lambda player: player.rank).rank * 0.99 # i want bottom to be slighty at top
+MAX_RANK =  max(ALL_PLAYERS, key=lambda player: player.rank).rank * 1.05 # i want to top be slighly under
+MIN_RANK = min (ALL_PLAYERS, key=lambda player: player.rank).rank * 0.95 # i want bottom to be slighty at top
 
 
 # create data from games
