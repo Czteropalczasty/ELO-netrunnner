@@ -82,11 +82,27 @@ def final_summary():
     for player in sorted_players:
         games = len(player.all_games)
         wins = 0
+
+
+
         for game in player.all_games:
             if game[1] == 1:
                 wins += 1
-        player_string = f"> {player.name} **winrate** {(wins / games) * 100:.2f}% | games({len(player.all_games)})"
+
+        winrate = (wins / games) * 100
+
+        player_string = f"> {player.name} **winrate** {winrate:.2f}% | games({len(player.all_games)})"
         file_writer.write(player_string,new_line=True)
+
+        def estimated_winrate(winrate, n):
+            winrate /= 100
+
+            max = winrate + 1.96 * math.sqrt((winrate * (1 - winrate) / n))
+            min = winrate - 1.96 * math.sqrt((winrate * (1 - winrate) / n))
+
+            print(f"es {player.name}  min: {min*100:.2f}%, max: {max*100:.2f}%")
+
+        estimated_winrate(winrate, games)
 
 
     ## Every player data
