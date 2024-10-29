@@ -19,9 +19,10 @@ class Player:
         Player.ALL_PLAYERS.sort(key=lambda player: player.rank,reverse=True)
 
     def print_player(self,newLine=True):
-        print(f"{self.name} : {round(self.rank)}",end="")
+        string = (f"{self.name} : {round(self.rank)}")
         if newLine:
-            print("")
+            string+=("\n")
+        return string
 
     def reset_games(self):
         self.all_games += self.round_outcome
