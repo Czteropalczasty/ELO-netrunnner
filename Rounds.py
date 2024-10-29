@@ -136,17 +136,20 @@ def final_summary():
                 h2h_dict[opponent_name]["wins"] += 1
             elif outcome == 0:
                 h2h_dict[opponent_name]['losses'] += 1  # Increment losses
-            elif outcome == 1:
+            elif outcome == 0.5:
                 h2h_dict[opponent_name]['draws'] += 1  # Increment draws
         file_writer.write("### head to head scores", new_line=True)
         file_writer.write("(wins-losses-draws)", new_line=True)
         for opponent in played_with:
             file_writer.write(f"vs {opponent.name} {h2h_dict[opponent.name]['wins']}-{h2h_dict[opponent.name]['losses']}-{h2h_dict[opponent.name]['draws']} ",new_line=True)
 
+        file_writer.write("\n")
+        file_writer.write("---")
+
 
 
         #TODO : estimated winratio based on statistics
-
+        #TODO : summary most games, winrates, elo, and maybe even a table?
 
         copy_all_analysis()
 
