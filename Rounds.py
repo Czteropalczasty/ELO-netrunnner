@@ -52,6 +52,7 @@ def round_summary():
 
 
 
+
 def final_summary():
     FILE_PATH = "Analysis.md"
     file_writer = FileWriter(FILE_PATH)
@@ -61,7 +62,18 @@ def final_summary():
     file_writer.write("> this is purely to scratch my itch, this will not determine anything in final scores, just analysis of our meetings")
     file_writer.write("\n")
 
-    file_writer.write(f"**total rounds** : {CURRENT_ROUND} with **games** : {sum(len(player.all_games) for player in Player.ALL_PLAYERS)/2}\n")
+    file_writer.write(">[!info] V1.1")
+    file_writer.write(
+        "> removed BYE games from games, does not affect elo, only winrate and h2h")
+    file_writer.write("\n")
+
+    for player in Player.ALL_PLAYERS:
+        for game in player.all_games:
+            if game[0].name == "BYE":
+                player.all_games.remove(game)
+
+    n_rounds = round((sum(len(player.all_games) for player in Player.ALL_PLAYERS)/2))
+    file_writer.write(f"**total rounds** : {CURRENT_ROUND} with **games** : {n_rounds}\n")
 
     file_writer.write("## Elo after all rounds")
     file_writer.write("nick : elo [games]")
@@ -70,6 +82,8 @@ def final_summary():
         player_string = str(place) +". "+ player.print_player(newLine=False)
         player_string += f" [{len(player.all_games)}]"
         file_writer.write(player_string,new_line=True)
+        place += 1
+    file_writer.write("![all_elo_graph](Players_elo_graphs/ALL_PLAYERS.png)")
 
     file_writer.write("## Win ratio after all rounds ",new_line=True)
     file_writer.write("\n")
@@ -83,15 +97,13 @@ def final_summary():
         games = len(player.all_games)
         wins = 0
 
-
-
         for game in player.all_games:
             if game[1] == 1:
                 wins += 1
 
         winrate = (wins / games) * 100
 
-        player_string = f"> {player.name} **winrate** {winrate:.2f}% | games({len(player.all_games)})"
+        player_string = f"> {player.name} **winrate** {winrate:.2f}% | games ({len(player.all_games)})"
         file_writer.write(player_string,new_line=True)
 
         def estimated_winrate(winrate, n):
@@ -118,28 +130,34 @@ def final_summary():
         # his graph
         file_writer.write(f"![{player.name} graph](Players_elo_graphs/{player.name}.png)")
 
-        # head to head
+
         # get all players print them like this : vs Gruntownie 3-0-1 (wins,loses,draws)
         h2h_dict = {}
 
         played_with = set(game[0] for game in player.all_games)
+        played_with = {item for item in played_with if item.name != "BYE"}
         for opponent in played_with:
             h2h_dict[opponent.name] = {
                 'wins': 0,
                 'losses': 0,
                 'draws': 0
             }
+
         for game in player.all_games:
             opponent_name = game[0].name
             outcome = game[1]
+
             if outcome == 1:
                 h2h_dict[opponent_name]["wins"] += 1
             elif outcome == 0:
                 h2h_dict[opponent_name]['losses'] += 1  # Increment losses
             elif outcome == 0.5:
                 h2h_dict[opponent_name]['draws'] += 1  # Increment draws
-        file_writer.write("### head to head scores", new_line=True)
-        file_writer.write("(wins-losses-draws)", new_line=True)
+        file_writer.write("#### head to head scores", new_line=True)
+
+        file_writer.write("(wins-losses-draws)")
+        file_writer.write(f"Total : {sum(player['wins'] for player in h2h_dict.values())}-{sum(player['losses'] for player in h2h_dict.values())}-{sum(player['draws'] for player in h2h_dict.values())}")
+        file_writer.write("")
         for opponent in played_with:
             file_writer.write(f"vs {opponent.name} {h2h_dict[opponent.name]['wins']}-{h2h_dict[opponent.name]['losses']}-{h2h_dict[opponent.name]['draws']} ",new_line=True)
 
