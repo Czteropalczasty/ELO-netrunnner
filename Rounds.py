@@ -1,12 +1,6 @@
-#from ctypes import oledll
 from itertools import count
-
-from fontTools.misc.roundTools import otRound
-
 from FileWriter import FileWriter
 from Copy_generator import *
-#from pygments.lexers.csound import newline
-
 from ELO_Calculator import *
 from player import Player
 
@@ -18,8 +12,6 @@ def round_set_up(players_playing_in_round):
     global PlAYERS_PLAYING, CURRENT_ROUND
     CURRENT_ROUND += 1
     PlAYERS_PLAYING = players_playing_in_round
-    print(f"Round: {CURRENT_ROUND} ")
-
 
 def update_elo():
     global PlAYERS_PLAYING
@@ -41,7 +33,6 @@ def update_elo():
 
 def round_summary():
     global CURRENT_ROUND
-    print(f"Elo after round {CURRENT_ROUND}")
     PlAYERS_PLAYING.sort(key=lambda player: player.temp_rank, reverse=True)
     for player in PlAYERS_PLAYING:
         diff = round(player.temp_rank - player.rank)
@@ -112,7 +103,6 @@ def final_summary():
             max = winrate + 1.96 * math.sqrt((winrate * (1 - winrate) / n))
             min = winrate - 1.96 * math.sqrt((winrate * (1 - winrate) / n))
 
-            print(f"es {player.name}  min: {min*100:.2f}%, max: {max*100:.2f}%")
 
         estimated_winrate(winrate, games)
 
@@ -164,15 +154,11 @@ def final_summary():
         file_writer.write("\n")
         file_writer.write("---")
 
-
-
         #TODO : estimated winratio based on statistics
         #TODO : summary most games, winrates, elo, and maybe even a table?
 
-        copy_all_analysis()
+def calculate_games():
 
-def CALCUALTE_GAMES():
-    global BYE
 
     # generate players
     Gruntownie = Player("Gruntownie")
@@ -252,14 +238,22 @@ def CALCUALTE_GAMES():
     round_summary()
 
 
-
     # ==============================================================================================================
     # FINAL PLAYER PRINT
-    final_summary()
-    print()
+    # final_summary()
+    round_data = {
+        "rounds":CURRENT_ROUND,
+        "games":round((sum(len(player.all_games) for player in Player.ALL_PLAYERS)/2)),
+        "players":[player for player in Player.ALL_PLAYERS],
+        "player_games": [{
+            "player_name":player.name,
+            "player_games":player.all_games
+        }
+            for player in Player.ALL_PLAYERS]
+    }
 
-    return Player.ALL_PLAYERS
+    return round_data
 
 if __name__ == "__main__":
-    CALCUALTE_GAMES()
+    calculate_games()
 

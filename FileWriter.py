@@ -4,7 +4,7 @@ class FileWriter:
         with open(self.file_path, 'w') as file:
             pass  # This will clear the file
 
-    def write(self, line, new_line=False):
+    def write(self, line, new_line=True):
         with open(self.file_path, 'a') as file:  # Open file in append mode
             file.write(line)  # Append the line followed by a newline
             if new_line:
