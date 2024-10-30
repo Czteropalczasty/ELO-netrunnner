@@ -46,7 +46,7 @@ def round_summary():
     for player in PlAYERS_PLAYING:
         diff = round(player.temp_rank - player.rank)
         player.update_rank()
-        player.print_player(newLine=False)
+        player.to_string(newLine=False)
 
         player.reset_games()
 
@@ -79,7 +79,7 @@ def final_summary():
     file_writer.write("nick : elo [games]")
     place = 1
     for player in Player.ALL_PLAYERS:
-        player_string = str(place) +". "+ player.print_player(newLine=False)
+        player_string = str(place) +". "+ player.to_string(newLine=False)
         player_string += f" [{len(player.all_games)}]"
         file_writer.write(player_string,new_line=True)
         place += 1

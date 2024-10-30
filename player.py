@@ -15,7 +15,7 @@ class Player:
         self.ranks.append(self.rank)
         Player.ALL_PLAYERS.sort(key=lambda player: player.rank,reverse=True)
 
-    def print_player(self,newLine=True):
+    def to_string(self, newLine=True):
         string = (f"{self.name} : {round(self.rank)}")
         if newLine:
             string+=("\n")

@@ -82,7 +82,7 @@ for game_round in rounds:
     for player in players:
         diff = round(player.temp_rank - player.rank)
         player.update_rank()
-        player.print_player(newLine=False)
+        player.to_string(newLine=False)
         print(f" ({diff})")
     print("\n")
 
