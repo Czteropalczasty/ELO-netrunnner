@@ -1,17 +1,14 @@
 class Player:
     ALL_PLAYERS = []
 
-    def __init__(self, name,rank=None):
+    def __init__(self, name,rank=1500):
         self.name = name
-        if rank is None:
-            self.rank = 1500
-        else:
-            self.rank = rank
-
+        self.rank = rank
         self.temp_rank = 1500
         self.round_outcome = []
         self.all_games = []
         self.ranks = [self.rank]
+
         Player.ALL_PLAYERS.append(self)
     def update_rank(self):
         self.rank = self.temp_rank

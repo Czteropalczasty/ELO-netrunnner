@@ -1,12 +1,9 @@
 import math
 
 K_FACTOR = 32
-
-# so we have function
 """
     get_estimated_outcome -> calculates what outcome should be
-    update elo -> given how many points were earned and how many should be earner it returns gains
-    
+    update elo -> given how many points were earned and how many should be earner it returns gains    
 """
 
 def get_estimated_outcome(elo_a,elo_b):
@@ -25,7 +22,5 @@ def get_elo_change(estimated_earn, actual_earn, k_factor=K_FACTOR):
     return k_factor * (actual_earn - estimated_earn)
 
 def update_elo(elo,elo_change):
+    # idk why it is here but sure
     return elo + elo_change
-
-
-# TODO: based on round_template.json update players ELO

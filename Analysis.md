@@ -38,12 +38,12 @@ nick : elo [games]
 (wins-losses-draws)
 Total : 10-8-0
 
-vs Staniach21 1-1-0 <br>
 vs Gruntownie 3-2-0 <br>
 vs givenToFly 4-3-0 <br>
 vs Orris 1-1-0 <br>
 vs Baltar 1-0-0 <br>
 vs Henader 0-1-0 <br>
+vs Staniach21 1-1-0 <br>
 
 
 ---
@@ -55,11 +55,11 @@ vs Henader 0-1-0 <br>
 (wins-losses-draws)
 Total : 11-8-0
 
-vs Staniach21 0-1-0 <br>
 vs Gruntownie 5-3-0 <br>
-vs Olus2000 3-4-0 <br>
 vs Orris 2-0-0 <br>
+vs Olus2000 3-4-0 <br>
 vs Henader 1-0-0 <br>
+vs Staniach21 0-1-0 <br>
 
 
 ---
@@ -73,8 +73,8 @@ Total : 4-3-0
 
 vs Gruntownie 2-0-0 <br>
 vs givenToFly 1-0-0 <br>
-vs Olus2000 1-1-0 <br>
 vs Orris 0-1-0 <br>
+vs Olus2000 1-1-0 <br>
 vs Baltar 0-1-0 <br>
 
 
@@ -88,8 +88,8 @@ vs Baltar 0-1-0 <br>
 Total : 2-2-0
 
 vs Olus2000 0-1-0 <br>
-vs Orris 1-0-0 <br>
 vs Gruntownie 0-1-0 <br>
+vs Orris 1-0-0 <br>
 vs Staniach21 1-0-0 <br>
 
 
@@ -102,12 +102,12 @@ vs Staniach21 1-0-0 <br>
 (wins-losses-draws)
 Total : 8-10-1
 
-vs Staniach21 0-2-0 <br>
 vs givenToFly 3-5-0 <br>
-vs Olus2000 2-3-0 <br>
 vs Orris 0-0-1 <br>
-vs Baltar 1-0-0 <br>
+vs Olus2000 2-3-0 <br>
 vs Henader 2-0-0 <br>
+vs Baltar 1-0-0 <br>
+vs Staniach21 0-2-0 <br>
 
 
 ---
@@ -120,10 +120,10 @@ vs Henader 2-0-0 <br>
 Total : 2-4-1
 
 vs Gruntownie 0-0-1 <br>
-vs Staniach21 1-0-0 <br>
 vs givenToFly 0-2-0 <br>
 vs Olus2000 1-1-0 <br>
 vs Baltar 0-1-0 <br>
+vs Staniach21 1-0-0 <br>
 
 
 ---
@@ -136,8 +136,8 @@ vs Baltar 0-1-0 <br>
 Total : 1-3-0
 
 vs givenToFly 0-1-0 <br>
-vs Olus2000 1-0-0 <br>
 vs Gruntownie 0-2-0 <br>
+vs Olus2000 1-0-0 <br>
 
 
 ---
