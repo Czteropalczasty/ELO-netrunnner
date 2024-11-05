@@ -1,13 +1,10 @@
-from asyncio import current_task
-from itertools import count
 from FileWriter import FileWriter
-from Copy_generator import *
 from ELO_Calculator import *
-from player import Player
+from Data_models.Player import Player
 
 PlAYERS_PLAYING = []
 CURRENT_ROUND = 0
-k_factor = 64
+k_factor = 32
 
 def round_set_up(players_playing_in_round):
     global PlAYERS_PLAYING, CURRENT_ROUND

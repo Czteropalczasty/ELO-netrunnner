@@ -1,4 +1,3 @@
-from FileWriter import FileWriter
 from player import Player
 FILE_PATH = "Analysis.md"
 from Rounds import *
