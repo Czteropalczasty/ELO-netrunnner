@@ -75,8 +75,15 @@ def generate_rapport():
 
         played_with = set(game[0] for game in player.all_games)
         played_with = {item for item in played_with if item.name != "BYE"}
-        for player in played_with:
-            print(player.name)
+        print(f"player currently done is {player.name} he played with :")
+
+        for playerz in played_with:
+            print(playerz.name)
+
+        print(f"{player.name} games are ")
+        for game in player.all_games:
+            print(f"vs {game[0].name}score {game[1]}")
+
         for opponent in played_with:
             h2h_dict[opponent.name] = {
                 'wins': 0,

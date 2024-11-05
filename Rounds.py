@@ -1,3 +1,4 @@
+from asyncio import current_task
 from itertools import count
 from FileWriter import FileWriter
 from Copy_generator import *
@@ -6,7 +7,7 @@ from player import Player
 
 PlAYERS_PLAYING = []
 CURRENT_ROUND = 0
-k_factor = 32
+k_factor = 64
 
 def round_set_up(players_playing_in_round):
     global PlAYERS_PLAYING, CURRENT_ROUND
@@ -33,6 +34,8 @@ def update_elo():
 
 def round_summary():
     global CURRENT_ROUND
+    print("=============")
+    print(f"round : {CURRENT_ROUND}")
     PlAYERS_PLAYING.sort(key=lambda player: player.temp_rank, reverse=True)
     for player in PlAYERS_PLAYING:
         diff = round(player.temp_rank - player.rank)
@@ -40,7 +43,7 @@ def round_summary():
         player.to_string(newLine=False)
 
         player.reset_games()
-
+        print(f"{player.name} elo: {player.rank} change {diff}")
 
 
 
@@ -168,6 +171,7 @@ def calculate_games():
     Baltar = Player("Baltar")
     Olus2000 = Player("Olus2000")
     Henader = Player("Henader")
+    Coval = Player("Coval")
 
     # creating bye player
     BYE = Player("BYE")
@@ -237,10 +241,29 @@ def calculate_games():
     update_elo()
     round_summary()
 
+    # ---------------------------------------------------------------------------------------
+    # ROUND 5
+
+    # ROUND 5 SET UP
+    round_set_up([ Gruntownie, Olus2000, Henader,Baltar,Coval])
+
+    ## GAMES
+
+    Baltar.round_outcome = [(Gruntownie, 0), (Gruntownie, 1), (Olus2000,1),(Coval,1),(Coval,0 )]
+    Gruntownie.round_outcome = [(Baltar, 1), (Baltar, 0),(Coval,0),(Olus2000,1),(Olus2000,0),(Henader,1),(Henader,0) ]
+    Olus2000.round_outcome = [(Coval, 1), (Baltar,0),(Gruntownie,0),(Gruntownie,1)]
+    Coval.round_outcome = [(Olus2000,0),(Gruntownie,1),(Baltar,0),(Baltar,1)]
+    Henader.round_outcome = [(Gruntownie,0),(Gruntownie,1)]
+
+
+    ## update elo.
+    update_elo()
+    round_summary()
+
 
     # ==============================================================================================================
     # FINAL PLAYER PRINT
-    # final_summary()
+    final_summary()
     round_data = {
         "rounds":CURRENT_ROUND,
         "games":round((sum(len(player.all_games) for player in Player.ALL_PLAYERS)/2)),

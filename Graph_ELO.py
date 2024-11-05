@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from dulwich.walk import ALL_ORDERS
 from Rounds import calculate_games
 
-ALL_PLAYERS = calculate_games()
+ALL_PLAYERS = calculate_games()["players"]
 
 MAX_RANK =  max(ALL_PLAYERS, key=lambda player: player.rank).rank * 1.05 # i want to top be slighly under
 MIN_RANK = min (ALL_PLAYERS, key=lambda player: player.rank).rank * 0.95 # i want bottom to be slighty at top
