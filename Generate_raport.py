@@ -1,5 +1,5 @@
-from FileWriter import FileWriter
-from player import Player
+from Data_models.Player import Player
+from Copy_generator import copy_all_analysis
 FILE_PATH = "Analysis.md"
 from Rounds import *
 

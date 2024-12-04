@@ -1,13 +1,10 @@
-from asyncio import current_task
-from itertools import count
 from FileWriter import FileWriter
-from Copy_generator import *
 from ELO_Calculator import *
-from player import Player
+from Data_models.Player import Player
 
 PlAYERS_PLAYING = []
 CURRENT_ROUND = 0
-k_factor = 64
+k_factor = 32
 
 def round_set_up(players_playing_in_round):
     global PlAYERS_PLAYING, CURRENT_ROUND
@@ -172,6 +169,7 @@ def calculate_games():
     Olus2000 = Player("Olus2000")
     Henader = Player("Henader")
     Coval = Player("Coval")
+    Beowulf = Player("Beowulf")
 
     # creating bye player
     BYE = Player("BYE")
@@ -260,6 +258,54 @@ def calculate_games():
     update_elo()
     round_summary()
 
+    # ---------------------------------------------------------------------------------------
+    # ROUND 6 12.11.2024
+
+    # ROUND 6 SET UP
+    round_set_up([Gruntownie, Olus2000, Staniach21, GivenToFly])
+
+    ## GAMES
+    Gruntownie.round_outcome = [(Staniach21, 0), (GivenToFly, 0), (Olus2000, 1), (Olus2000, 0)]
+    Olus2000.round_outcome = [(GivenToFly, 1), (Staniach21, 0), (Gruntownie, 0), (Gruntownie, 1)]
+    GivenToFly.round_outcome = [(Olus2000, 0), (Gruntownie, 1), (Staniach21, 0), (Staniach21, 1)]
+    Staniach21.round_outcome = [(Gruntownie, 1), (Olus2000, 1),(GivenToFly,1),(GivenToFly,0)]
+
+    ## update elo.
+    update_elo()
+    round_summary()
+
+    # ---------------------------------------------------------------------------------------
+    # ROUND 7 19.11.2024
+
+    # ROUND 7 SET UP
+    round_set_up([Olus2000, Staniach21, GivenToFly])
+
+    ## GAMES
+    GivenToFly.round_outcome = [(Staniach21, 1), (Olus2000, 0), (Staniach21, 0), (Olus2000, 1),(Staniach21,1)]
+    Olus2000.round_outcome = [(GivenToFly, 1), (Staniach21, 0), (GivenToFly, 0), (Staniach21, 1)]
+    Staniach21.round_outcome = [(GivenToFly, 0), (Olus2000, 1), (GivenToFly, 1), (Olus2000, 0),(GivenToFly,0)]
+
+    ## update elo.
+    update_elo()
+    round_summary()
+
+    # ---------------------------------------------------------------------------------------
+    # ROUND 8 3.12.2024
+
+    # ROUND 8 SET UP
+    round_set_up([Olus2000, Staniach21, GivenToFly,Gruntownie,Beowulf])
+
+    ## GAMES
+    GivenToFly.round_outcome = [(Gruntownie, 1), (Gruntownie, 1), (Olus2000, 0),(Beowulf, 0), (Staniach21, 1),(Beowulf, 0)]
+    Olus2000.round_outcome = [(GivenToFly, 1),(Gruntownie, 0),(Beowulf, 0), (Gruntownie, 1),(Staniach21, 1)]
+    Staniach21.round_outcome = [(GivenToFly, 0), (Olus2000, 0)]
+    Gruntownie.round_outcome = [(GivenToFly, 0), (GivenToFly, 0), (Olus2000, 1),(Olus2000, 0)]
+    Beowulf.round_outcome = [(GivenToFly, 1),(Olus2000, 1),(GivenToFly, 1)]
+
+
+    ## update elo.
+    update_elo()
+    round_summary()
 
     # ==============================================================================================================
     # FINAL PLAYER PRINT
