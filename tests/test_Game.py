@@ -1,5 +1,6 @@
 from unittest import TestCase
-
+import sys
+sys.path.insert(1, 'Data_models')
 from poetry.repositories import Repository
 import sys
 from Data_models.Game import Game
